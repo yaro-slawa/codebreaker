@@ -1,0 +1,24 @@
+[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33m*[0m[31mF[0m
+
+Pending: (Failures listed here are expected and do not affect your suite's status)
+[33m
+  1) Codebreaker::Game#guess makrs up user's guess
+[0m[36m     # Not yet implemented
+[0m[36m     # ./spec/codebreaker/game_spec.rb:36
+[0m
+
+Failures:
+
+  1) Codebreaker::Game#hint increments hints that are made
+     [31mFailure/Error: expect(game.instance_variable_get(:@hitns_made)).to eql(old + 1)[0m
+     [31mNoMethodError:[0m
+     [31m  undefined method `+' for nil:NilClass[0m
+     [36m# ./spec/codebreaker/game_spec.rb:47:in `block (3 levels) in <module:Codebreaker>'[0m
+
+Finished in 0.0318 seconds (files took 0.12432 seconds to load)
+[31m7 examples, 1 failure, 1 pending[0m
+
+Failed examples:
+
+[31mrspec ./spec/codebreaker/game_spec.rb:44[0m [36m# Codebreaker::Game#hint increments hints that are made[0m
+

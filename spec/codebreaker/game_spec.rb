@@ -42,9 +42,9 @@ module Codebreaker
   	  before {game.start}
 
   	  it "increments hints that are made" do
-  	    old = game.instance_variable_get(:@hitns_made)
+  	    old = game.instance_variable_get(:@hints_made)
   	    game.hint
-  	    expect(game.instance_variable_get(:@hitns_made)).to eql(old + 1)
+  	    expect(game.instance_variable_get(:@hints_made)).to eql(old + 1)
   	  end
   	end
   end
