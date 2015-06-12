@@ -24,13 +24,14 @@ module Codebreaker
       code.each_char.with_index do |c, i|
         if secret[i] == c
           marked_guess += "+"
-          secret.gsub!(c, "*")
+          secret[i] = "*"
+          code[i] = "0"
         end
       end
       code.each_char.with_index do |c, i|
         if (secret[i] != c && secret.include?(c))
           marked_guess += "-"
-          secret.gsub!(c, "*")
+          secret[i] = "*"
         end
       end
       marked_guess
