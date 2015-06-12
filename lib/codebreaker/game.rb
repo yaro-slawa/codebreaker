@@ -4,7 +4,7 @@ module Codebreaker
   	ATTEMPT_COUNT = 10
   	HINT_COUNT = 1
 
-  	attr_reader :attempts_made, :hints_made, :secret_code, :hint_str
+  	attr_reader :attempts_made, :hints_made
 
   	def initialize
   	  @attempts_made = 0
@@ -29,7 +29,7 @@ module Codebreaker
   	  	end
   	  end
   	  code.each_char.with_index do |c, i|
-  	  	if (secret[i] != c && secret.include?(c))
+  	    if (secret[i] != c && secret.include?(c))
   	  	  marked_guess += "-"
   	  	  secret[i] = "*"
   	  	end
