@@ -21,26 +21,26 @@ module Codebreaker
   	  marked_guess = ""
   	  secret = @secret_code.dup
 
-      code.each_char.with_index do |c, i|
-        if secret[i] == c
-          marked_guess += "+"
-          secret[i] = "*"
-          code[i] = "0"
-        end
-      end
-      code.each_char.with_index do |c, i|
-        if (secret[i] != c && secret.include?(c))
-          marked_guess += "-"
-          secret[i] = "*"
-        end
-      end
-      marked_guess
-    end
+  	  code.each_char.with_index do |c, i|
+  	  	if secret[i] == c
+  	  	  marked_guess += "+"
+  	  	  secret[i] = "*"
+  	  	  code[i] = "0"
+  	  	end
+  	  end
+  	  code.each_char.with_index do |c, i|
+  	  	if (secret[i] != c && secret.include?(c))
+  	  	  marked_guess += "-"
+  	  	  secret[i] = "*"
+  	  	end
+  	  end
+  	  marked_guess
+  	end
 
-    def hint
-      @hint_str[@hints_made] = @secret_code[@hints_made]
-      @hints_made += 1
-      @hint_str
-    end
+  	def hint
+  	  @hint_str[@hints_made] = @secret_code[@hints_made]
+  	  @hints_made += 1
+  	  @hint_str
+  	end
   end
 end
