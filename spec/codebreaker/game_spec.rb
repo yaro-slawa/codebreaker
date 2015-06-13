@@ -23,9 +23,7 @@ module Codebreaker
 
       before {game.start}
 
-      it "receive user's guess" do
-        allow(game.guess("1234")).to receive(:code)
-      end 
+      it "receive user's guess"
 
       it "increments attempts that are made" do
         old = game.instance_variable_get(:@attempts_made)
@@ -33,7 +31,10 @@ module Codebreaker
         expect(game.instance_variable_get(:@attempts_made)).to eql(old + 1)
       end
 
-      it "makrs up user's guess"
+      it "makrs up user's guess" do
+        marked_guess = game.guess("1234")
+        expect(marked_guess).to match(/(^$ | *[+-])/)
+      end
     end 
 
     context "#hint" do
@@ -46,6 +47,8 @@ module Codebreaker
         game.hint
         expect(game.instance_variable_get(:@hints_made)).to eql(old + 1)
       end
+
+      it "shows hint"
     end
   end
 end
