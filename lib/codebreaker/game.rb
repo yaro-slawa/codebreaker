@@ -28,12 +28,10 @@ module Codebreaker
 
     def submit_guess(code)
       if @attempts_made < ATTEMPT_COUNT
-      	@attempts_made += 1
+        @attempts_made += 1
         @won = true if code == @secret_code
         return "++++" if @won == true
         guess(code)
-      else
-        @won = false
       end
     end
 
