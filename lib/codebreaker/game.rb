@@ -12,11 +12,11 @@ module Codebreaker
     def initialize
       @attempts_made = 0
       @hints_made = 0
+      @hint_str = "*" * CODE_LENGTH
+      @won = false
     end
 
     def start
-      @hint_str = "*" * CODE_LENGTH
-      @won = false
       @secret_code = CODE_LENGTH.times.map {Random.rand(1..6)}.join
     end
 
