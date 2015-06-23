@@ -44,19 +44,20 @@ module Codebreaker
     def guess(code)
       marked_code = ""
       secret = @secret_code.dup
+      code_copy = @code.dup
 
-      code.each_char.with_index do |c, i|
+      code_copy.each_char.with_index do |c, i|
         if secret[i] == c
           marked_code += "+"
           secret[i] = "0"
-          code[i] = "*"
+          code_copy[i] = "*"
         end
       end
-      code.each_char.with_index do |c, i|
+      code_copy.each_char.with_index do |c, i|
         if secret.include?(c)
           marked_code += "-"
           secret[secret.index(c)] = "0"
-          code[i] = "*"
+          code_copy[i] = "*"
         end
       end
       marked_code
