@@ -44,7 +44,7 @@ module Codebreaker
     def guess(code)
       marked_code = ""
       secret = @secret_code.dup
-      code_copy = @code.dup
+      code_copy = code.dup
 
       code_copy.each_char.with_index do |c, i|
         if secret[i] == c
