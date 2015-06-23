@@ -15,9 +15,9 @@ module Codebreaker
     end
 
     def start
-      @secret_code = CODE_LENGTH.times.map {Random.rand(1..6)}.join
       @hint_str = "*" * CODE_LENGTH
       @won = false
+      @secret_code = CODE_LENGTH.times.map {Random.rand(1..6)}.join
     end
 
     def submit_guess(code)
